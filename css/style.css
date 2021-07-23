@@ -253,11 +253,6 @@ img {
 .places {
 }
 
-.wrap-full {
-  max-width: 1264px;
-  margin: 0 auto;
-}
-
 .places__caption {
   display: flex;
   flex-wrap: wrap;
