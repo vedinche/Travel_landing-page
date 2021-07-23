@@ -53,13 +53,18 @@ img {
   height: auto;
 }
 
-.wrap {
+.wrap-min {
   max-width: 1060px;
   margin: 0 auto;
 }
 
-/*Header styles start*/
+.wrap-full {
+  max-width: 1264px;
+  margin: 0 auto;
+}
 
+/*Header styles start*/
+/*фиксированные header:*/
 .header {
   width: 100%;
   position: fixed;
@@ -105,6 +110,7 @@ img {
   min-height: 100vh;
   background: url(../img/Hero.jpg) no-repeat left;
   background-size: cover;
+  padding-bottom: 223px;
 }
 
 .intro__title {
@@ -169,7 +175,7 @@ img {
 
 /* intro styles end */
 
-/*benefits start*/
+/*benefits styles start*/
 
 .benefits {
   margin-bottom: 131px;
@@ -241,3 +247,129 @@ img {
 }
 
 /*benefits end*/
+
+/* places start*/
+
+.places {
+}
+
+.wrap-full {
+  max-width: 1264px;
+  margin: 0 auto;
+}
+
+.places__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.section__title {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 42px;
+  color: #102746;
+  position: relative;
+  padding-bottom: 10px;
+  margin-right: 15px;
+}
+
+.section__title::after {
+  display: block;
+  content: '';
+  width: 253px;
+  height: 3px;
+  background: #006dfe;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.places__view-all {
+  font-size: 16px;
+  line-height: 24px;
+  color: #006dfe;
+  text-decoration: none;
+  padding-right: 59px;
+  background: url(../img/svg/arrow-right.svg) no-repeat right center;
+}
+
+.places__view-all:hover,
+.places__view-all:focus {
+  opacity: 0.65;
+}
+
+.places__cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+}
+
+/*overlay*/
+.places__card {
+  position: relative;
+  overflow: hidden; /*что-бы изображения не вылазили за пределы контейнера при наведении*/
+}
+/*overlay*/
+.places__card::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 24, 36, 0.4);
+}
+
+.places__card:hover .places__card-pic {
+  transform: scale(1.05);
+}
+
+.places__card_large {
+  grid-column: span 3;
+}
+
+.places__card_small {
+  grid-column: span 2;
+}
+
+.places__card-pic {
+  object-fit: cover;
+  width: 100%;
+  transition: 0.15s;
+  /*указывает, как изображение будет масштабироваться внутри контейнера(адаптивность)*/
+}
+
+.places__card-pic_bg {
+  height: 354px;
+}
+
+.places__card-pic_sm {
+  height: 283px;
+}
+
+.places__card-title {
+  position: absolute;
+  bottom: 27px;
+  left: 29px;
+  z-index: 3;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 60px;
+  color: #fff;
+}
+
+.places__card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+/* places styles end*/
